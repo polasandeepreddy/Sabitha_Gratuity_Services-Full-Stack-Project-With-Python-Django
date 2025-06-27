@@ -1,0 +1,233 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}FAQ - Sabitha Gratuity Services{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex justify-center mb-6">
+            <div class="bg-blue-100 p-4 rounded-full">
+                <i data-lucide="help-circle" class="h-12 w-12 text-blue-600"></i>
+            </div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Frequently Asked Questions
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Find answers to common questions about our gratuity and trust services. 
+            Can't find what you're looking for? Contact us for personalized assistance.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <i data-lucide="clock" class="h-4 w-4 text-green-500"></i>
+                <span>Quick Answers</span>
+            </div>
+            <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <i data-lucide="user-check" class="h-4 w-4 text-blue-500"></i>
+                <span>Expert Guidance</span>
+            </div>
+            <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <i data-lucide="help-circle" class="h-4 w-4 text-purple-500"></i>
+                <span>Comprehensive Coverage</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Categories Overview -->
+<section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div class="text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm mb-3">
+                    <i data-lucide="calculator" class="h-8 w-8 text-blue-600 mx-auto"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm">AS-15 Valuations</h3>
+                <p class="text-xs text-gray-600">4 questions</p>
+            </div>
+            <div class="text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm mb-3">
+                    <i data-lucide="file-text" class="h-8 w-8 text-blue-600 mx-auto"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm">Trust Formation</h3>
+                <p class="text-xs text-gray-600">4 questions</p>
+            </div>
+            <div class="text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm mb-3">
+                    <i data-lucide="building-2" class="h-8 w-8 text-blue-600 mx-auto"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm">Trust Registration</h3>
+                <p class="text-xs text-gray-600">4 questions</p>
+            </div>
+            <div class="text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm mb-3">
+                    <i data-lucide="user-check" class="h-8 w-8 text-blue-600 mx-auto"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm">PCIT Approvals</h3>
+                <p class="text-xs text-gray-600">4 questions</p>
+            </div>
+            <div class="text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm mb-3">
+                    <i data-lucide="help-circle" class="h-8 w-8 text-blue-600 mx-auto"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-sm">General Questions</h3>
+                <p class="text-xs text-gray-600">5 questions</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-4" id="faq-container">
+            <!-- FAQs will be populated here -->
+        </div>
+    </div>
+</section>
+
+<!-- Still Have Questions -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                Still Have Questions?
+            </h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Our team of experts is here to help you with personalized guidance 
+                and detailed explanations for your specific requirements.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-blue-100 p-3 rounded-full w-fit mx-auto mb-4">
+                        <i data-lucide="help-circle" class="h-6 w-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Expert Consultation</h3>
+                    <p class="text-sm text-gray-600">Get personalized advice from our experienced professionals</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-green-100 p-3 rounded-full w-fit mx-auto mb-4">
+                        <i data-lucide="clock" class="h-6 w-6 text-green-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Quick Response</h3>
+                    <p class="text-sm text-gray-600">Receive answers to your queries within 24 hours</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="bg-purple-100 p-3 rounded-full w-fit mx-auto mb-4">
+                        <i data-lucide="user-check" class="h-6 w-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Detailed Guidance</h3>
+                    <p class="text-sm text-gray-600">Comprehensive explanations tailored to your situation</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact/" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+                    Schedule Free Consultation
+                </a>
+                <a href="/contact/" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+                    Contact Our Experts
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+const faqData = [
+    {
+        category: 'AS-15 Valuations',
+        icon: 'calculator',
+        question: 'What is AS-15 valuation and why is it required?',
+        answer: 'AS-15 valuation is an accounting standard that requires companies to recognize and measure employee benefits, including gratuity, leave encashment, and superannuation. It ensures accurate financial reporting by calculating the present value of defined benefit obligations. This valuation is mandatory for companies to comply with accounting standards and provide transparent financial statements.'
+    },
+    {
+        category: 'AS-15 Valuations',
+        icon: 'calculator',
+        question: 'How often should AS-15 valuations be conducted?',
+        answer: 'AS-15 valuations should be conducted annually for financial reporting purposes. However, companies may also require interim valuations in case of significant changes in employee demographics, benefit structures, or actuarial assumptions. Regular valuations ensure compliance and accurate financial planning.'
+    },
+    {
+        category: 'Trust Formation',
+        icon: 'file-text',
+        question: 'Why should I form a gratuity trust for my company?',
+        answer: 'Forming a gratuity trust provides several benefits including tax advantages, better fund management, regulatory compliance, and protection of employee benefits. It helps companies set aside funds specifically for gratuity payments and ensures employees receive their benefits even if the company faces financial difficulties.'
+    },
+    {
+        category: 'Trust Formation',
+        icon: 'file-text',
+        question: 'What documents are required for trust formation?',
+        answer: 'Trust formation requires several documents including Trust Deed, Memorandum and Articles of Association, Board Resolution, Trustee appointment letters, KYC documents of trustees, bank account details, and employee benefit scheme details. We assist in preparing all necessary documentation.'
+    },
+    {
+        category: 'Trust Registration',
+        icon: 'building-2',
+        question: 'Is trust registration mandatory?',
+        answer: 'Yes, trust registration is mandatory under the Registration Act. Registration provides legal validity, enables tax benefits, and ensures regulatory compliance. Unregistered trusts may face legal challenges and tax implications.'
+    },
+    {
+        category: 'PCIT Approvals',
+        icon: 'user-check',
+        question: 'What is PCIT approval and when is it required?',
+        answer: 'PCIT (Principal Commissioner of Income Tax) approval is required for gratuity trusts to avail tax benefits under Section 80D. It ensures the trust complies with income tax regulations and operates for genuine employee welfare purposes.'
+    },
+    {
+        category: 'General Questions',
+        icon: 'help-circle',
+        question: 'Which states do you provide services in?',
+        answer: 'We provide comprehensive gratuity and trust services across Telangana, Andhra Pradesh, and Karnataka. Our team has extensive experience with regulatory requirements in these states and maintains good relationships with local authorities.'
+    },
+    {
+        category: 'General Questions',
+        icon: 'help-circle',
+        question: 'What makes your services different from others?',
+        answer: 'Our founder brings 20+ years of insurance industry experience with FIII qualification. We provide end-to-end solutions, maintain high success rates, ensure timely delivery, and offer personalized service with dedicated support throughout the process.'
+    }
+];
+
+let openIndex = 0;
+
+function renderFAQs() {
+    const container = document.getElementById('faq-container');
+    
+    container.innerHTML = faqData.map((faq, index) => `
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+            <button class="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset" onclick="toggleFAQ(${index})">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-100 p-2 rounded-lg">
+                        <i data-lucide="${faq.icon}" class="h-5 w-5 text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 text-left">${faq.question}</h3>
+                        <p class="text-sm text-blue-600 font-medium">${faq.category}</p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 ml-4">
+                    <i data-lucide="${openIndex === index ? 'chevron-up' : 'chevron-down'}" class="h-5 w-5 text-gray-500"></i>
+                </div>
+            </button>
+            
+            <div class="px-6 pb-4 ${openIndex === index ? '' : 'hidden'}">
+                <div class="border-t border-gray-100 pt-4">
+                    <p class="text-gray-700 leading-relaxed">${faq.answer}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    lucide.createIcons();
+}
+
+function toggleFAQ(index) {
+    openIndex = openIndex === index ? null : index;
+    renderFAQs();
+}
+
+// Initialize FAQs
+document.addEventListener('DOMContentLoaded', renderFAQs);
+</script>
+{% endblock %}

@@ -1,0 +1,393 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}Client Testimonials - Sabitha Gratuity Services{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Client Testimonials
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Discover what our clients say about our professional gratuity and
+            trust services. Real experiences from businesses across Telangana,
+            AP, and Karnataka.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+            <div class="text-center">
+                <div class="text-2xl md:text-3xl font-bold text-blue-600">50+</div>
+                <div class="text-sm text-gray-600">Happy Clients</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl md:text-3xl font-bold text-blue-600">100%</div>
+                <div class="text-sm text-gray-600">Success Rate</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl md:text-3xl font-bold text-blue-600">3</div>
+                <div class="text-sm text-gray-600">States Covered</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl md:text-3xl font-bold text-blue-600">24/7</div>
+                <div class="text-sm text-gray-600">Support Available</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Grid -->
+<section id="testimonials-section" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div id="testimonials-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Testimonials will be loaded here -->
+        </div>
+        
+        <div id="load-more-container" class="mt-8 text-center hidden">
+            <button id="load-more-btn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                Show More
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Submit Your Testimonial -->
+<section class="max-w-4xl mx-auto px-4 py-12 bg-white rounded-2xl shadow-md border border-gray-200 mb-20">
+    <h2 class="text-3xl font-semibold mb-10 text-center text-gray-800">
+        Submit Your Testimonial
+    </h2>
+
+    <!-- Status Messages -->
+    <div id="testimonial-status" class="hidden mb-6 p-4 rounded-lg border"></div>
+
+    <form id="testimonial-form" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Name -->
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+            <input id="name" name="name" required class="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:outline-none" placeholder="Rajesh Kumar">
+        </div>
+
+        <!-- Position -->
+        <div>
+            <label for="position" class="block text-sm font-medium text-gray-700 mb-1">Position *</label>
+            <input id="position" name="position" required class="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:outline-none" placeholder="HR Director">
+        </div>
+
+        <!-- Company -->
+        <div>
+            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company *</label>
+            <input id="company" name="company" required class="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:outline-none" placeholder="Tech Solutions Pvt Ltd">
+        </div>
+
+        <!-- Location -->
+        <div>
+            <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Location *</label>
+            <input id="location" name="location" required class="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:outline-none" placeholder="Hyderabad, Telangana">
+        </div>
+
+        <!-- Services -->
+        <div>
+            <label for="services" class="block text-sm font-medium text-gray-700 mb-1">Services Used</label>
+            <input id="services" name="services" class="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:outline-none" placeholder="Trust Formation, AS-15 Valuation">
+        </div>
+
+        <!-- Date -->
+        <div>
+            <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Date *</label>
+            <input id="date" name="date" type="month" required class="w-full border border-gray-300 rounded-md px-3 py-1.5 text-sm focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <!-- Testimonial Textarea -->
+        <div class="md:col-span-3">
+            <label for="text" class="block text-sm font-medium text-gray-700 mb-1">Testimonial *</label>
+            <textarea id="text" name="text" required rows="3" class="w-full border border-gray-300 rounded-md px-2 py-1.5 text-sm focus:ring-blue-500 focus:outline-none resize-none" placeholder="Share your experience..."></textarea>
+        </div>
+
+        <!-- Rating -->
+        <div class="md:col-span-3 flex items-center gap-2">
+            <label class="text-sm font-medium text-gray-700">Rating *</label>
+            <div class="flex space-x-1" id="rating-stars">
+                <button type="button" class="rating-star w-5 h-5 text-gray-300 hover:text-yellow-400" data-rating="1">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </button>
+                <button type="button" class="rating-star w-5 h-5 text-gray-300 hover:text-yellow-400" data-rating="2">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </button>
+                <button type="button" class="rating-star w-5 h-5 text-gray-300 hover:text-yellow-400" data-rating="3">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </button>
+                <button type="button" class="rating-star w-5 h-5 text-gray-300 hover:text-yellow-400" data-rating="4">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </button>
+                <button type="button" class="rating-star w-5 h-5 text-gray-300 hover:text-yellow-400" data-rating="5">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </button>
+            </div>
+            <input type="hidden" id="rating" name="rating" value="5">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="md:col-span-3 text-center pt-4">
+            <button type="submit" id="testimonial-submit" class="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                Submit Testimonial
+            </button>
+        </div>
+    </form>
+</section>
+
+<script>
+let testimonials = [];
+let visibleCount = 4;
+let currentRating = 5;
+
+// Load testimonials
+async function loadTestimonials() {
+    try {
+        const response = await fetch('/api/testimonials/');
+        const data = await response.json();
+        
+        if (data.success) {
+            testimonials = data.data || [];
+            renderTestimonials();
+        } else {
+            showEmptyState();
+        }
+    } catch (error) {
+        console.error('Error loading testimonials:', error);
+        showErrorState();
+    }
+}
+
+function renderTestimonials() {
+    const container = document.getElementById('testimonials-container');
+    const loadMoreContainer = document.getElementById('load-more-container');
+    
+    if (testimonials.length === 0) {
+        showEmptyState();
+        return;
+    }
+    
+    const visibleTestimonials = testimonials.slice(0, visibleCount);
+    
+    container.innerHTML = visibleTestimonials.map(testimonial => `
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-full flex flex-col hover:shadow-xl transition-shadow duration-300">
+            <div class="flex justify-between mb-4">
+                <i data-lucide="quote" class="w-6 h-6 text-blue-600 opacity-50"></i>
+                <div class="flex space-x-1">
+                    ${Array(testimonial.rating).fill().map(() => 
+                        '<i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>'
+                    ).join('')}
+                </div>
+            </div>
+            <p class="text-gray-700 italic mb-4 flex-grow">"${testimonial.text}"</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+                ${testimonial.services.map(service => 
+                    `<span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">${service}</span>`
+                ).join('')}
+            </div>
+            <div class="border-t border-gray-100 pt-4 mt-auto">
+                <div class="flex justify-between">
+                    <div>
+                        <h3 class="font-bold text-gray-900">${testimonial.name}</h3>
+                        <p class="text-blue-600 text-sm">${testimonial.position}</p>
+                        <div class="flex items-center text-gray-600 text-sm">
+                            <i data-lucide="building" class="w-4 h-4 mr-1"></i>
+                            ${testimonial.company}
+                        </div>
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-1"></i>
+                            ${testimonial.location}
+                        </div>
+                    </div>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
+                        ${testimonial.date}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    // Show/hide load more button
+    if (visibleCount < testimonials.length) {
+        loadMoreContainer.classList.remove('hidden');
+    } else {
+        loadMoreContainer.classList.add('hidden');
+    }
+    
+    lucide.createIcons();
+}
+
+function showEmptyState() {
+    document.getElementById('testimonials-container').innerHTML = `
+        <div class="col-span-full">
+            <div class="bg-blue-50 text-blue-800 border border-blue-300 rounded-lg px-6 py-5 text-center text-base md:text-lg max-w-2xl mx-auto">
+                <strong>Be the first!</strong> Share your experience with our services and help others discover the quality of our work.
+            </div>
+        </div>
+    `;
+}
+
+function showErrorState() {
+    document.getElementById('testimonials-container').innerHTML = `
+        <div class="col-span-full">
+            <div class="bg-red-100 text-red-800 border border-red-300 rounded-lg px-6 py-5 text-center text-base md:text-lg max-w-2xl mx-auto">
+                <i data-lucide="alert-circle" class="h-6 w-6 mx-auto mb-2"></i>
+                <strong>Error:</strong> Failed to load testimonials
+            </div>
+        </div>
+    `;
+    lucide.createIcons();
+}
+
+// Load more testimonials
+document.getElementById('load-more-btn').addEventListener('click', () => {
+    visibleCount += 4;
+    renderTestimonials();
+});
+
+// Rating system
+document.querySelectorAll('.rating-star').forEach(star => {
+    star.addEventListener('click', (e) => {
+        e.preventDefault();
+        const rating = parseInt(star.dataset.rating);
+        currentRating = rating;
+        document.getElementById('rating').value = rating;
+        
+        // Update star display
+        document.querySelectorAll('.rating-star').forEach((s, index) => {
+            if (index < rating) {
+                s.classList.remove('text-gray-300');
+                s.classList.add('text-yellow-400');
+            } else {
+                s.classList.remove('text-yellow-400');
+                s.classList.add('text-gray-300');
+            }
+        });
+    });
+});
+
+// Initialize rating display
+document.querySelectorAll('.rating-star').forEach((s, index) => {
+    if (index < currentRating) {
+        s.classList.remove('text-gray-300');
+        s.classList.add('text-yellow-400');
+    }
+});
+
+// Submit testimonial
+document.getElementById('testimonial-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('testimonial-submit');
+    const statusDiv = document.getElementById('testimonial-status');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+        <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white inline-block mr-2"></div>
+        Submitting...
+    `;
+    
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Parse services into array
+    if (data.services) {
+        data.services = data.services.split(',').map(s => s.trim());
+    } else {
+        data.services = [];
+    }
+    
+    // Format date
+    if (data.date) {
+        const [year, month] = data.date.split('-');
+        const dateObj = new Date(Number(year), Number(month) - 1);
+        data.date = dateObj.toLocaleString('default', {
+            month: 'long',
+            year: 'numeric',
+        });
+    }
+    
+    try {
+        const response = await fetch('/api/testimonials/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]')?.value || ''
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            statusDiv.className = 'mb-6 p-4 rounded-lg border bg-green-50 border-green-200 text-green-800';
+            statusDiv.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="check-circle" class="h-5 w-5"></i>
+                    <p class="font-medium">${result.message}</p>
+                </div>
+            `;
+            
+            // Add new testimonial to the list
+            const newTestimonial = {
+                id: Date.now(),
+                name: data.name,
+                position: data.position,
+                company: data.company,
+                location: data.location,
+                rating: parseInt(data.rating),
+                text: data.text,
+                services: data.services,
+                date: data.date,
+                created_at: new Date().toISOString()
+            };
+            
+            testimonials.unshift(newTestimonial);
+            renderTestimonials();
+            
+            // Reset form
+            this.reset();
+            currentRating = 5;
+            document.getElementById('rating').value = 5;
+            
+            // Reset rating stars
+            document.querySelectorAll('.rating-star').forEach((s, index) => {
+                if (index < 5) {
+                    s.classList.remove('text-gray-300');
+                    s.classList.add('text-yellow-400');
+                } else {
+                    s.classList.remove('text-yellow-400');
+                    s.classList.add('text-gray-300');
+                }
+            });
+            
+            // Scroll to testimonials
+            setTimeout(() => {
+                document.getElementById('testimonials-section').scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+            
+        } else {
+            throw new Error(result.message || 'Failed to submit testimonial');
+        }
+    } catch (error) {
+        statusDiv.className = 'mb-6 p-4 rounded-lg border bg-red-50 border-red-200 text-red-800';
+        statusDiv.innerHTML = `
+            <div class="flex items-center space-x-2">
+                <i data-lucide="alert-circle" class="h-5 w-5"></i>
+                <p class="font-medium">${error.message}</p>
+            </div>
+        `;
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Testimonial';
+        statusDiv.classList.remove('hidden');
+        lucide.createIcons();
+    }
+});
+
+// Load testimonials on page load
+document.addEventListener('DOMContentLoaded', loadTestimonials);
+</script>
+{% endblock %}
